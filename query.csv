@@ -1,0 +1,12 @@
+time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type,horizontalError,depthError,magError,magNst,status,locationSource,magSource
+2024-08-21T21:05:23.580Z,42.6107,146.4426,35,4.6,mb,16,134,2.508,0.78,us,us7000n8jt,2024-08-21T21:25:05.040Z,"106 km SE of Nemuro, Japan",earthquake,10.85,1.96,0.192,8,reviewed,us,us
+2024-08-20T08:24:23.543Z,44.1659,147.3637,102.767,5.2,mb,67,81,3.434,0.92,us,us7000n83y,2024-08-20T08:37:54.040Z,"65 km NE of Shikotan, Russia",earthquake,8.97,6.888,0.049,136,reviewed,us,us
+2024-08-19T23:02:12.886Z,42.9196,144.0315,122.386,4.7,mb,75,124,1.112,0.47,us,us7000n81b,2024-08-19T23:23:54.040Z,"6 km SW of Shiranuka, Japan",earthquake,3.59,6.283,0.045,151,reviewed,us,us
+2024-08-18T15:50:49.603Z,36.7123,140.4958,35,5,mb,46,122,1.851,0.53,us,us7000n7tb,2024-08-19T04:04:57.288Z,"14 km ESE of Daigo, Japan",earthquake,8.52,1.918,0.029,381,reviewed,us,us
+2024-08-18T15:48:21.780Z,36.7981,140.4916,35,4.7,mb,48,119,1.853,0.63,us,us7000n7ta,2024-08-18T16:32:49.040Z,"13 km ENE of Daigo, Japan",earthquake,4.05,1.91,0.05,121,reviewed,us,us
+2024-08-17T06:32:09.394Z,32.4651,142.3967,10,5.2,mww,129,100,2.27,0.66,us,us7000n7kx,2024-08-17T06:47:38.040Z,"Izu Islands, Japan region",earthquake,7.49,1.755,0.073,18,reviewed,us,us
+2024-08-17T00:33:28.899Z,38.5728,141.8918,53.028,4.8,mb,78,124,2.304,0.9,us,us7000n7jh,2024-08-17T00:49:01.040Z,"41 km ENE of Onagawa Chō, Japan",earthquake,4.61,7.191,0.066,71,reviewed,us,us
+2024-08-16T15:57:17.741Z,44.0283,146.4285,98.241,4.5,mb,41,134,2.766,0.75,us,us7000n7ft,2024-08-16T16:57:51.040Z,"34 km NW of Shikotan, Russia",earthquake,9.96,8.024,0.054,99,reviewed,us,us
+2024-08-16T13:06:01.932Z,36.3166,134.836,10,4.4,mb,23,77,2.026,0.64,us,us7000n7dx,2024-08-16T14:33:16.732Z,"83 km NNW of Kameshima, Japan",earthquake,7.29,1.906,0.149,13,reviewed,us,us
+2024-08-15T11:20:35.359Z,35.419,139.2285,21.374,4.5,mb,33,116,1.398,0.86,us,us7000n750,2024-08-16T01:50:55.042Z,"5 km N of Hadano, Japan",earthquake,3.08,5.734,0.108,25,reviewed,us,us
+2024-08-15T04:50:58.520Z,30.9965,131.5358,39.208,4.5,mb,42,125,1.059,1.36,us,us7000n73m,2024-08-15T05:27:42.040Z,"58 km ENE of Nishinoomote, Japan",earthquake,6.69,7.854,0.11,24,reviewed,us,us

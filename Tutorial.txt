@@ -1,0 +1,110 @@
+Certainly! I'll adjust the code to use Dash instead of Folium. Dash allows us to create interactive web applications with Python. Here's the modified code:
+
+```python
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from dash import Dash, dcc, html, Input, Output
+from dash.dependencies import Input, Output
+
+# Load the CSV file
+df = pd.read_csv('earthquakes.csv')
+
+# Convert time to datetime
+df['time'] = pd.to_datetime(df['time'])
+
+# Create magnitude ranges
+df['magnitude_range'] = pd.cut(df['mag'], bins=[0, 3, 5, 7, 10], labels=['<3', '3-5', '5-7', '>7'])
+
+# Initialize the Dash app
+app = Dash(__name__)
+
+# Define the layout
+app.layout = html.Div([
+    html.H1("Earthquake Data in Japan"),
+    
+    dcc.Graph(id='pie-chart'),
+    
+    dcc.Graph(id='map-plot')
+])
+
+# Callback for pie chart
+@app.callback(
+    Output('pie-chart', 'figure'),
+    Input('pie-chart', 'id')
+)
+def update_pie_chart(_):
+    magnitude_counts = df['magnitude_range'].value_counts()
+    fig = px.pie(
+        values=magnitude_counts.values,
+        names=magnitude_counts.index,
+        title='Distribution of Earthquake Magnitudes near Japan'
+    )
+    return fig
+
+# Callback for map
+@app.callback(
+    Output('map-plot', 'figure'),
+    Input('map-plot', 'id')
+)
+def update_map(_):
+    fig = go.Figure(data=go.Scattermapbox(
+        lat=df['latitude'],
+        lon=df['longitude'],
+        mode='markers',
+        marker=go.scattermapbox.Marker(
+            size=df['mag'] * 5,
+            color=df['mag'],
+            colorscale='Viridis',
+            showscale=True
+        ),
+        text=df.apply(lambda row: f"Magnitude: {row['mag']}<br>Depth: {row['depth']} km<br>Time: {row['time']}", axis=1),
+        hoverinfo='text'
+    ))
+
+    fig.update_layout(
+        mapbox_style="open-street-map",
+        mapbox=dict(
+            center=dict(lat=38.2682, lon=140.8694),
+            zoom=4
+        ),
+        showlegend=False,
+        height=600,
+        margin={"r":0,"t":0,"l":0,"b":0}
+    )
+
+    return fig
+
+# Run the app
+if __name__ == '__main__':
+    app.run_server(debug=True)
+```
+
+This code does the following:
+
+1. Imports necessary libraries: pandas for data manipulation, plotly for creating interactive plots, and dash for creating the web application.
+
+2. Loads the CSV file and processes the data similar to the previous version.
+
+3. Creates a Dash application with two graphs: a pie chart for magnitude distribution and a map showing earthquake locations.
+
+4. Uses callbacks to create the pie chart and map plot.
+
+5. The pie chart shows the distribution of earthquake magnitudes.
+
+6. The map plot shows the location of each earthquake, with the size and color of the markers corresponding to the magnitude of the earthquake.
+
+To use this code:
+
+1. Make sure you have the required libraries installed:
+   ```
+   pip install pandas plotly dash
+   ```
+
+2. Save your CSV data to a file named 'earthquakes.csv' in the same directory as your Python script.
+
+3. Run the script. It will start a local server.
+
+4. Open a web browser and go to the address shown in the console (usually http://127.0.0.1:8050/) to view the interactive dashboard.
+
+This Dash application provides an interactive interface where users can hover over data points to see more information about each earthquake. The pie chart and map are both interactive and will update if you add more data to your CSV file.
