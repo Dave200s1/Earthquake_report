@@ -1,6 +1,6 @@
-from dashboard import Earthquake_Dashboard
+from dashboard import EarthquakeDashboard
 
 if __name__ == '__main__':
-    dashboard = Earthquake_Dashboard
-    dashboard.run(debug=True)
+    dashboard = EarthquakeDashboard('query.csv')
+    dashboard.run()
 
